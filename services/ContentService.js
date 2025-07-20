@@ -8,7 +8,6 @@ class ContentService {
   }
 
   async getOrCreateContent(data) {
-    console.log('mnk1');
     const { userId, type, input } = data;
 
     // Check for cached content

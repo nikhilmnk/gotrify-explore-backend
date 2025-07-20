@@ -124,7 +124,14 @@ async function registerRoutes(app) {
       }
     });
   };
-
+  app.get('/api/check-route', async (req, res) => {
+    try {
+      res.json({ message: 'Route is working' });
+    } catch (error) {
+      console.error(`Error on ${type}:`, error);
+      res.status(500).json({ message: `Failed to generate ${type.replace('-', ' ')}` });
+    }
+  });
   setupRoute('/api/generate-itinerary', itineraryRequestSchema, 'itinerary');
   setupRoute('/api/estimate-cost', costEstimatorRequestSchema, 'cost-estimator');
   setupRoute('/api/best-time', bestTimeRequestSchema, 'best-time', '1');

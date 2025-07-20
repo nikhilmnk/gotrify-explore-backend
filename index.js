@@ -8,7 +8,6 @@ const path = require("path");
 
 dotenv.config(); // Load .env
 
-console.log('CLERK_SECRET_KEY:', process.env.CLERK_SECRET_KEY);
 
 const app = express();
 
