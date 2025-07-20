@@ -69,11 +69,11 @@ app.use((req, res, next) => {
   });
 
   // Static file serving (optional)
-  const clientPath = path.join(__dirname, "public");
-  app.use(express.static(clientPath));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(clientPath, "index.html"));
-  });
+  // const clientPath = path.join(__dirname, "public");
+  // app.use(express.static(clientPath));
+  // app.get("*", (req, res) => {
+  //   res.sendFile(path.join(clientPath, "index.html"));
+  // });
 
   const port = 5000;
   server.listen(port, () => {
